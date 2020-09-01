@@ -32,7 +32,7 @@ def testForgotPassword(browser, email):
     driver.find_element_by_id("forgot-password").click()
     if driver.current_url == "https://jwoodmansee.printercloud.com/admin/password/reset/":
         driver.find_element_by_id("email").send_keys(email)
-
+       
     time.sleep(5)
     driver.quit()
 
@@ -41,7 +41,6 @@ def run():
     with open("config.json") as config:
         jsonData = json.load(config)
     browsers = ["chrome", "firefox", "safari"]
-    print(browsers)
     for b in range(len(browsers)):
         loginTest(browsers[b], jsonData["userName"], jsonData["password"])
         testForgotPassword(browsers[b], jsonData["email"])
