@@ -14,7 +14,7 @@ def loginTest(browser, username, password):
 
     driver.get("https://jwoodmansee.printercloud.com/admin/")
     driver.find_element_by_id("relogin_user").send_keys(username)
-    driver.find_element_by_id("relogin_password").send_keys(password   )
+    driver.find_element_by_id("relogin_password").send_keys(password)
     driver.find_element_by_id("admin-login-btn").send_keys(Keys.ENTER)
     time.sleep(10)
     driver.quit()
